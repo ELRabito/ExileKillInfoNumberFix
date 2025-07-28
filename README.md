@@ -26,3 +26,7 @@ Can also easily be added to other scripts to show the huge numbers better (The o
 	
 	// Example for ExileClient_gui_lockerDialog_event_onDepositButtonClick
 	throw format ["Your locker can only hold %1 pop tabs.", (_lockerLimit call ExileClient_util_string_exponentToStringFormatted)];
+
+
+And don't go to crazy with the numbers, stay below 10,000,000,000 (Otherwise it will not be precise). 
+<img width="2560" height="1440" alt="grafik" src="https://github.com/user-attachments/assets/6a4bd45b-1d96-4832-867a-b3f3139d1955" />
