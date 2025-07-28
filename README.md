@@ -2,7 +2,6 @@
 
 1. Add a new function to your mission, for example easily via initplayerlocal.sqf. This will take care of the number formatting.
 
-		private ['_code', '_function', '_file'];
 		{
 			missionNamespace setVariable [(_x #0), compileScript [_x #1]];
 		} forEach [
