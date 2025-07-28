@@ -4,7 +4,7 @@ This fixes the issue with the huge number display inside the kill info.
 <img width="928" height="527" alt="grafik" src="https://github.com/user-attachments/assets/ceac62d5-00e9-455a-a563-e852684020bd" />
 
 # Install
-1. Add a new function to your mission, for example easily via this small snippet pasted inside initplayerlocal.sqf. This will take care of the number formatting.
+1. Add a new function to your mission, for example easily via this small snippet pasted inside initplayerlocal.sqf. This function will then take care of the number formatting.
 
 		{
 			missionNamespace setVariable [(_x #0), compileScript [_x #1]];
