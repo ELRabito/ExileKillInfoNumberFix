@@ -1,6 +1,6 @@
 # Install
 
-1. Add a new function to your mission, for example easily via initplayerlocal.sqf. This will take care of the number formatting.
+1. Add a new function to your mission, for example easily via this small snippet pasted inside initplayerlocal.sqf. This will take care of the number formatting.
 
 		{
 			missionNamespace setVariable [(_x #0), compileScript [_x #1]];
