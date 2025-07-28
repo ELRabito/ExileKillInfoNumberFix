@@ -3,7 +3,7 @@
 This fixes the issue with the huge number display inside the kill info.
 <img width="928" height="527" alt="grafik" src="https://github.com/user-attachments/assets/ceac62d5-00e9-455a-a563-e852684020bd" />
 
-# Install
+# Installation
 1. Add a new function to your mission, for example easily via this small snippet pasted inside initplayerlocal.sqf. This function will then take care of the number formatting.
 
 		{
@@ -17,4 +17,4 @@ This fixes the issue with the huge number display inside the kill info.
 	
 		ExileClient_gui_hud_showKillDetails = "Overrides\ExileClient_gui_hud_showKillDetails.sqf";
 
-
+3. Done
