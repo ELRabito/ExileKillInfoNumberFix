@@ -18,3 +18,11 @@ This fixes the issue with the huge number display inside the kill info.
 		ExileClient_gui_hud_showKillDetails = "Overrides\ExileClient_gui_hud_showKillDetails.sqf";
 
 3. Done
+
+
+# Other Information
+
+Can also easily be added to other scripts to show the huge numbers better (The output is a string!)
+	
+	// Example for ExileClient_gui_lockerDialog_event_onDepositButtonClick
+	throw format ["Your locker can only hold %1 pop tabs.", (_lockerLimit call ExileClient_util_string_exponentToStringFormatted)];
