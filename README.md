@@ -1,5 +1,6 @@
 # ExileKillInfoNumberFix
 
+This fixes the issue with the huge number display inside the kill info.
 <img width="928" height="527" alt="grafik" src="https://github.com/user-attachments/assets/ceac62d5-00e9-455a-a563-e852684020bd" />
 
 # Install
