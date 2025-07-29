@@ -29,5 +29,6 @@ Can also easily be added to other scripts to show the huge numbers better (The o
 
 
 And don't go to crazy with the numbers, stay below 10,000,000,000 (Otherwise it will not be precise / Arma limitation!). 
-<img width="752" height="488" alt="grafik" src="https://github.com/user-attachments/assets/3db4f3e4-29fd-4373-8752-998f0ecd9bcb" />
+<img width="719" height="467" alt="grafik" src="https://github.com/user-attachments/assets/792819c0-8c93-4f65-9a6a-cd926593ede9" />
+
 
