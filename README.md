@@ -28,7 +28,7 @@ Can also easily be added to other scripts to show the huge numbers better (The o
 	throw format ["Your locker can only hold %1 pop tabs.", (_lockerLimit call ExileClient_util_string_exponentToStringFormatted)];
 
 
-And don't go to crazy with the numbers, stay below 10,000,000,000 (Otherwise it will not be precise / Arma limitation!). 
+And don't go to crazy with the numbers, stay below 1,000,000,000 (Otherwise it will not be precise / Arma limitation!). 
 <img width="719" height="467" alt="grafik" src="https://github.com/user-attachments/assets/792819c0-8c93-4f65-9a6a-cd926593ede9" />
 
 
