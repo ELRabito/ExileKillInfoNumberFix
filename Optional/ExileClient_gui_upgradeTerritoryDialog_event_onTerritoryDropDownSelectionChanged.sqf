@@ -8,32 +8,33 @@
  * This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. 
  * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
  */
- 
-private["_display", "_territoryDropDown", "_index", "_flagObject", "_level", "_territoryConfig", "_territoryLevels", "_territoryPrice", "_territoryRange", "_costControl", "_radiusControl", "_levelControl", "_upgradeButton"];
 disableSerialization;
-_display = uiNameSpace getVariable ["RscExileUpgradeTerritoryDialog", displayNull];
-_territoryDropDown = _this select 0;
-_index = _this select 1;
-_flagObject = objectFromNetId (_territoryDropDown lbData _index);
-_level = _flagObject getVariable ["ExileTerritoryLevel", 1];
-_territoryConfig = getArray(missionConfigFile >> "CfgTerritories" >> "Prices");
-_territoryLevels = count _territoryConfig;
-_upgradeButton = _display displayCtrl 4001;
+params ["_territoryDropDown","_index"];
+private _display = uiNameSpace getVariable ["RscExileUpgradeTerritoryDialog", displayNull];
+private _flagObject = objectFromNetId (_territoryDropDown lbData _index);
+private _level = _flagObject getVariable ["ExileTerritoryLevel", 1];
+private _territoryConfig = getArray(missionConfigFile >> "CfgTerritories" >> "Prices");
+private _territoryLevels = count _territoryConfig;
+private _upgradeButton = _display displayCtrl 4001;
+private _costControl = _display displayCtrl 4002;
+private _radiusControl = _display displayCtrl 4003;
+private _levelControl = _display displayCtrl 4004;
+_levelControl ctrlSetStructuredText parseText format ["<t size='1.4'>%1/%2</t>",((_level + 1) min _territoryLevels),_territoryLevels];
 if((_level + 1) > _territoryLevels)then
 {
-	_territoryPrice = (_territoryConfig select (_territoryLevels - 1)) select 0;
-	_territoryRange = (_territoryConfig select (_territoryLevels - 1)) select 1;
+	_radiusControl ctrlShow false;
+	_levelControl ctrlSetStructuredText parseText format ["<t size='1.4'>Max Level %1/%2</t>",((_level + 1) min _territoryLevels),_territoryLevels];
+	_costControl ctrlShow false;
 	_upgradeButton ctrlEnable false;
 }
 else
 {
-	_territoryPrice = (_territoryConfig select _level) select 0;
-	_territoryRange = (_territoryConfig select _level) select 1;
+	private _territoryPrice = (_territoryConfig select _level) select 0;
+	private _territoryRange = (_territoryConfig select _level) select 1;
+	_costControl ctrlShow true;
+	_upgradeButton ctrlEnable true;
+	_radiusControl ctrlShow true;
+	_costControl ctrlSetStructuredText(parseText format["<t size='1.4'>%1<img image='\exile_assets\texture\ui\poptab_inline_ca.paa' size='1' shadow='true' /></t>", (_territoryPrice call ExileClient_util_string_exponentToStringFormatted)]);
+	_radiusControl ctrlSetStructuredText parseText format ["<t size='1.4'>%1m</t>",_territoryRange];
 	_upgradeButton ctrlEnable true;
 };
-_costControl = _display displayCtrl 4002;
-_costControl ctrlSetStructuredText(parseText format["<t size='1.4'>%1<img image='\exile_assets\texture\ui\poptab_inline_ca.paa' size='1' shadow='true' /></t>", (_territoryPrice call ExileClient_util_string_exponentToStringFormatted)]);
-_radiusControl = _display displayCtrl 4003;
-_radiusControl ctrlSetStructuredText parseText format ["<t size='1.4'>%1m</t>",_territoryRange];
-_levelControl = _display displayCtrl 4004;
-_levelControl ctrlSetStructuredText parseText format ["<t size='1.4'>%1/%2</t>",((_level + 1) min _territoryLevels),_territoryLevels];
