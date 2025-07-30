@@ -31,7 +31,7 @@ Can also easily be added to other scripts to show the huge numbers better (The o
 And don't go to crazy with the numbers, stay below 1,000,000,000 (Otherwise it will not be precise / Arma limitation!). 
 <img width="719" height="467" alt="grafik" src="https://github.com/user-attachments/assets/792819c0-8c93-4f65-9a6a-cd926593ede9" />
 
-Territory upgrade big number fix inside the Optional folder
+Some more "big number" fixes can be found in the Optional folder.
 
 <img width="513" height="456" alt="grafik" src="https://github.com/user-attachments/assets/1d91fdfb-f8db-489f-9de0-f0d015f466c2" />
 
